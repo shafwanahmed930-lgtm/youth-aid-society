@@ -1,0 +1,1593 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Youth Aid Society | YAS</title>
+
+
+    <style>
+
+        /* =========================
+           BASIC SETTINGS
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #173b24;
+            background: #f7faf8;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: rgba(255,255,255,0.95);
+
+            backdrop-filter: blur(10px);
+
+            border-bottom: 1px solid #e7eee9;
+        }
+
+        .navbar {
+            height: 75px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+
+        /* LOGO */
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+
+            border-radius: 50%;
+
+            background: linear-gradient(
+                135deg,
+                #159447,
+                #075d2b
+            );
+
+            color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-weight: bold;
+        }
+
+        .logo h2 {
+            font-size: 21px;
+            color: #075d2b;
+        }
+
+        .logo p {
+            font-size: 10px;
+            color: #777;
+            letter-spacing: 1px;
+        }
+
+
+        /* MENU */
+
+        .menu {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .menu a {
+            color: #23412c;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .menu a:hover {
+            color: #159447;
+        }
+
+        .join-button {
+            background: #159447;
+            color: white !important;
+
+            padding: 11px 20px;
+
+            border-radius: 30px;
+
+            box-shadow:
+                0 8px 20px rgba(21,148,71,0.25);
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+
+            min-height: 90vh;
+
+            display: flex;
+            align-items: center;
+
+            background:
+
+                radial-gradient(
+                    circle at 90% 15%,
+                    #ffe995,
+                    transparent 25%
+                ),
+
+                linear-gradient(
+                    135deg,
+                    #effaf2,
+                    #ffffff
+                );
+
+            overflow: hidden;
+        }
+
+        .hero-content {
+
+            display: grid;
+
+            grid-template-columns:
+                1.1fr
+                0.9fr;
+
+            gap: 60px;
+
+            align-items: center;
+        }
+
+
+        /* HERO TEXT */
+
+        .tag {
+
+            display: inline-block;
+
+            padding: 8px 15px;
+
+            background: #e0f5e6;
+
+            color: #087331;
+
+            border-radius: 30px;
+
+            font-size: 12px;
+
+            font-weight: bold;
+
+            letter-spacing: 1px;
+
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+
+            font-size: 65px;
+
+            line-height: 1.05;
+
+            margin: 20px 0;
+
+            letter-spacing: -2px;
+        }
+
+        .hero h1 span {
+            color: #159447;
+        }
+
+        .hero-text {
+
+            color: #65736a;
+
+            font-size: 18px;
+
+            max-width: 620px;
+        }
+
+
+        /* BUTTONS */
+
+        .buttons {
+            margin-top: 30px;
+
+            display: flex;
+
+            gap: 12px;
+
+            flex-wrap: wrap;
+        }
+
+        .button {
+
+            padding: 13px 24px;
+
+            border-radius: 30px;
+
+            font-weight: bold;
+
+            display: inline-block;
+
+            transition: 0.3s;
+        }
+
+        .green-button {
+
+            background: #159447;
+
+            color: white;
+
+            box-shadow:
+                0 10px 25px
+                rgba(21,148,71,0.25);
+        }
+
+        .green-button:hover {
+
+            transform: translateY(-3px);
+
+            background: #075d2b;
+        }
+
+        .white-button {
+
+            border: 2px solid #159447;
+
+            color: #159447;
+
+            background: white;
+        }
+
+        .white-button:hover {
+
+            background: #159447;
+
+            color: white;
+        }
+
+
+        /* HERO IMAGE */
+
+        .hero-image {
+
+            position: relative;
+
+            border-radius: 30px;
+
+            overflow: hidden;
+
+            border: 8px solid white;
+
+            box-shadow:
+                0 25px 60px
+                rgba(0,0,0,0.15);
+
+            transform: rotate(1deg);
+        }
+
+        .hero-image img {
+
+            width: 100%;
+
+            display: block;
+
+            aspect-ratio: 1 / 1;
+
+            object-fit: cover;
+        }
+
+        .image-label {
+
+            position: absolute;
+
+            bottom: 20px;
+
+            left: 20px;
+
+            right: 20px;
+
+            background:
+                rgba(7,93,43,0.92);
+
+            color: white;
+
+            padding: 15px;
+
+            border-radius: 15px;
+        }
+
+        .image-label strong {
+            display: block;
+            font-size: 19px;
+        }
+
+
+        /* =========================
+           SECTION
+        ========================= */
+
+        section {
+            padding: 90px 0;
+        }
+
+        .section-heading {
+            text-align: center;
+
+            max-width: 700px;
+
+            margin:
+                0 auto 50px;
+        }
+
+        .section-heading span {
+
+            color: #159447;
+
+            font-size: 12px;
+
+            font-weight: bold;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+        }
+
+        .section-heading h2 {
+
+            font-size: 44px;
+
+            line-height: 1.15;
+
+            margin: 10px 0;
+        }
+
+        .section-heading p {
+
+            color: #68756d;
+
+            font-size: 16px;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about {
+            background: white;
+        }
+
+        .about-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                0.9fr
+                1.1fr;
+
+            gap: 60px;
+
+            align-items: center;
+        }
+
+        .about-card {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #075d2b,
+                    #159447
+                );
+
+            color: white;
+
+            padding: 45px;
+
+            border-radius: 30px;
+
+            box-shadow:
+                0 20px 45px
+                rgba(7,93,43,0.18);
+        }
+
+        .about-card h2 {
+
+            font-size: 34px;
+
+            margin-bottom: 20px;
+        }
+
+        .about-card p {
+            color: #dceee2;
+        }
+
+        .about-text h2 {
+
+            font-size: 42px;
+
+            margin: 10px 0 20px;
+        }
+
+        .about-text > p {
+
+            color: #68756d;
+
+            margin-bottom: 15px;
+        }
+
+
+        /* VALUES */
+
+        .values {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 15px;
+
+            margin-top: 25px;
+        }
+
+        .value {
+
+            padding: 20px;
+
+            background: #eff8f1;
+
+            border-radius: 16px;
+
+            transition: 0.3s;
+        }
+
+        .value:hover {
+
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 10px 25px
+                rgba(0,0,0,0.08);
+        }
+
+        .value h3 {
+            color: #075d2b;
+            margin-bottom: 5px;
+        }
+
+        .value p {
+            color: #68756d;
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           OUR WORK
+        ========================= */
+
+        .works {
+            background: #f7faf8;
+        }
+
+        .gallery {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3,1fr);
+
+            gap: 25px;
+        }
+
+        .work-card {
+
+            background: white;
+
+            border-radius: 22px;
+
+            overflow: hidden;
+
+            border: 1px solid #e6eee8;
+
+            box-shadow:
+                0 10px 30px
+                rgba(0,0,0,0.05);
+
+            transition: 0.3s;
+        }
+
+        .work-card:hover {
+
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 20px 45px
+                rgba(0,0,0,0.12);
+        }
+
+        .work-card img {
+
+            width: 100%;
+
+            height: 280px;
+
+            object-fit: cover;
+        }
+
+        .work-content {
+
+            padding: 25px;
+        }
+
+        .work-content h3 {
+
+            color: #075d2b;
+
+            margin-bottom: 8px;
+
+            font-size: 21px;
+        }
+
+        .work-content p {
+
+            color: #68756d;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           MISSION
+        ========================= */
+
+        .mission {
+
+            background: #075d2b;
+
+            color: white;
+        }
+
+        .mission .section-heading span {
+            color: #ffd83d;
+        }
+
+        .mission .section-heading p {
+            color: #d6e9dc;
+        }
+
+        .mission-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4,1fr);
+
+            gap: 20px;
+        }
+
+        .mission-card {
+
+            background:
+                rgba(255,255,255,0.08);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.15);
+
+            padding: 30px;
+
+            border-radius: 20px;
+
+            text-align: center;
+
+            transition: 0.3s;
+        }
+
+        .mission-card:hover {
+
+            transform: translateY(-6px);
+
+            background:
+                rgba(255,255,255,0.14);
+        }
+
+        .mission-card .number {
+
+            font-size: 34px;
+
+            color: #ffd83d;
+
+            font-weight: bold;
+
+            margin-bottom: 10px;
+        }
+
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .join {
+
+            background: white;
+        }
+
+        .join-box {
+
+            background:
+
+                radial-gradient(
+                    circle at 90% 10%,
+                    #ffe88a,
+                    transparent 30%
+                ),
+
+                #edf9ef;
+
+            border-radius: 30px;
+
+            padding: 60px;
+
+            text-align: center;
+
+            border:
+                1px solid #dcebdd;
+        }
+
+        .join-box h2 {
+
+            font-size: 43px;
+
+            margin-bottom: 12px;
+        }
+
+        .join-box p {
+
+            color: #68756d;
+
+            max-width: 650px;
+
+            margin: auto;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact {
+
+            background: #f7faf8;
+
+            text-align: center;
+        }
+
+        .contact-info {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 20px;
+
+            flex-wrap: wrap;
+
+            margin-top: 35px;
+        }
+
+        .contact-box {
+
+            background: white;
+
+            padding: 20px 30px;
+
+            border-radius: 15px;
+
+            box-shadow:
+                0 8px 25px
+                rgba(0,0,0,0.06);
+        }
+
+        .contact-box strong {
+
+            display: block;
+
+            color: #075d2b;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            background: #063d1d;
+
+            color: white;
+
+            padding: 45px 0;
+
+            text-align: center;
+        }
+
+        footer h2 {
+            margin-bottom: 8px;
+        }
+
+        footer p {
+            color: #c9ddd0;
+        }
+
+        .social {
+
+            margin-top: 20px;
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 15px;
+        }
+
+        .social a {
+
+            color: white;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.25);
+
+            padding: 8px 16px;
+
+            border-radius: 20px;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media(max-width:900px) {
+
+            .menu {
+                display: none;
+            }
+
+            .hero-content,
+            .about-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 50px;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .mission-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+        }
+
+
+        @media(max-width:600px) {
+
+            .menu {
+                display: none;
+            }
+
+            .hero {
+                padding: 60px 0;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .gallery,
+            .mission-grid,
+            .values {
+
+                grid-template-columns: 1fr;
+            }
+
+            .about-card {
+                padding: 30px;
+            }
+
+            .about-text h2,
+            .section-heading h2,
+            .join-box h2 {
+
+                font-size: 32px;
+            }
+
+            .join-box {
+                padding: 35px 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
+
+    <header>
+
+        <div class="container navbar">
+
+            <div class="logo">
+
+                <div class="logo-icon">
+                    YAS
+                </div>
+
+                <div>
+
+                    <h2>Youth Aid Society</h2>
+
+                    <p>
+                        DIFFERENT PATHS, SAME DREAMS
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="menu">
+
+                <a href="#home">
+                    Home
+                </a>
+
+                <a href="#about">
+                    About
+                </a>
+
+                <a href="#works">
+                    Our Work
+                </a>
+
+                <a href="#mission">
+                    Mission
+                </a>
+
+                <a href="#contact">
+                    Contact
+                </a>
+
+                <a
+                    href="#join"
+                    class="join-button">
+
+                    Join Us
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="hero" id="home">
+
+        <div class="container hero-content">
+
+
+            <div>
+
+                <div class="tag">
+
+                    🌱 Youth In Action
+
+                </div>
+
+
+                <h1>
+
+                    Young People.
+
+                    <br>
+
+                    <span>
+                        Real Impact.
+                    </span>
+
+                </h1>
+
+
+                <p class="hero-text">
+
+                    Youth Aid Society is a youth-driven
+                    organization empowering young people
+                    to serve communities, develop leadership
+                    and create meaningful social change.
+
+                </p>
+
+
+                <div class="buttons">
+
+                    <a
+                        href="#works"
+                        class="button green-button">
+
+                        Explore Our Work →
+
+                    </a>
+
+
+                    <a
+                        href="#join"
+                        class="button white-button">
+
+                        Become a Volunteer
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="hero-image">
+
+                <!-- YOUR IMAGE -->
+
+                <img
+                    src="assets/youth-year-campaign.jpg"
+                    alt="Youth Aid Society">
+
+                <div class="image-label">
+
+                    <strong>
+                        স্বপ্ন দেখি তারুণ্যের
+                    </strong>
+
+                    <small>
+                        Different paths, same dreams.
+                    </small>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         ABOUT
+    ========================= -->
+
+    <section class="about" id="about">
+
+        <div class="container about-grid">
+
+
+            <div class="about-card">
+
+                <h2>
+
+                    People beside people,
+                    effort after effort.
+
+                </h2>
+
+
+                <p>
+
+                    We believe youth have the power
+                    to build a better future when they
+                    are given the opportunity to learn,
+                    serve and lead.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="about-text">
+
+                <span>
+                    WHO WE ARE
+                </span>
+
+
+                <h2>
+
+                    Building the leaders
+                    of tomorrow.
+
+                </h2>
+
+
+                <p>
+
+                    Youth Aid Society brings together
+                    young people who want to make a
+                    positive difference in their communities.
+
+                </p>
+
+
+                <p>
+
+                    Through volunteering, campaigns,
+                    teamwork and leadership activities,
+                    we help young people grow while
+                    serving society.
+
+                </p>
+
+
+
+                <div class="values">
+
+
+                    <div class="value">
+
+                        <h3>
+                            🤝 Community
+                        </h3>
+
+                        <p>
+                            Working together for people.
+                        </p>
+
+                    </div>
+
+
+                    <div class="value">
+
+                        <h3>
+                            💡 Innovation
+                        </h3>
+
+                        <p>
+                            Turning ideas into action.
+                        </p>
+
+                    </div>
+
+
+                    <div class="value">
+
+                        <h3>
+                            🌍 Inclusion
+                        </h3>
+
+                        <p>
+                            Everyone deserves a chance.
+                        </p>
+
+                    </div>
+
+
+                    <div class="value">
+
+                        <h3>
+                            🚀 Leadership
+                        </h3>
+
+                        <p>
+                            Preparing young leaders.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         OUR WORK
+    ========================= -->
+
+    <section class="works" id="works">
+
+        <div class="container">
+
+
+            <div class="section-heading">
+
+                <span>
+                    WHAT WE DO
+                </span>
+
+                <h2>
+                    Turning Ideas Into Action
+                </h2>
+
+                <p>
+                    Here are some of the activities,
+                    campaigns and initiatives of
+                    Youth Aid Society.
+                </p>
+
+            </div>
+
+
+
+            <div class="gallery">
+
+
+                <!-- CARD 1 -->
+
+                <div class="work-card">
+
+                    <img
+                        src="assets/youth-power-campaign.jpg"
+                        alt="Youth Power">
+
+                    <div class="work-content">
+
+                        <h3>
+                            Youth-Led Service
+                        </h3>
+
+                        <p>
+
+                            Young volunteers working
+                            together to support their
+                            communities.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- CARD 2 -->
+
+                <div class="work-card">
+
+                    <img
+                        src="assets/international-youth-day.jpg"
+                        alt="International Youth Day">
+
+                    <div class="work-content">
+
+                        <h3>
+                            International Youth Day
+                        </h3>
+
+                        <p>
+
+                            Bringing young people
+                            together to connect,
+                            learn and share ideas.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- CARD 3 -->
+
+                <div class="work-card">
+
+                    <img
+                        src="assets/youth-year-campaign.jpg"
+                        alt="Youth Campaign">
+
+                    <div class="work-content">
+
+                        <h3>
+                            Awareness Campaigns
+                        </h3>
+
+                        <p>
+
+                            Creative campaigns that
+                            encourage positive youth
+                            participation.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         MISSION
+    ========================= -->
+
+    <section class="mission" id="mission">
+
+        <div class="container">
+
+
+            <div class="section-heading">
+
+                <span>
+                    OUR DIRECTION
+                </span>
+
+                <h2>
+                    Build Skills. Serve People. Lead Change.
+                </h2>
+
+                <p>
+
+                    Our goal is to create a generation
+                    of confident, skilled and responsible
+                    young leaders.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="mission-grid">
+
+
+                <div class="mission-card">
+
+                    <div class="number">
+                        01
+                    </div>
+
+                    <h3>
+                        Youth Leadership
+                    </h3>
+
+                    <p>
+                        Developing responsible
+                        young leaders.
+                    </p>
+
+                </div>
+
+
+
+                <div class="mission-card">
+
+                    <div class="number">
+                        02
+                    </div>
+
+                    <h3>
+                        Community Service
+                    </h3>
+
+                    <p>
+                        Helping communities
+                        through volunteering.
+                    </p>
+
+                </div>
+
+
+
+                <div class="mission-card">
+
+                    <div class="number">
+                        03
+                    </div>
+
+                    <h3>
+                        Awareness
+                    </h3>
+
+                    <p>
+                        Promoting positive
+                        social awareness.
+                    </p>
+
+                </div>
+
+
+
+                <div class="mission-card">
+
+                    <div class="number">
+                        04
+                    </div>
+
+                    <h3>
+                        Collaboration
+                    </h3>
+
+                    <p>
+                        Building stronger
+                        teams and partnerships.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         JOIN US
+    ========================= -->
+
+    <section class="join" id="join">
+
+        <div class="container">
+
+            <div class="join-box">
+
+
+                <h2>
+                    Your Energy Can Create Change.
+                </h2>
+
+
+                <p>
+
+                    Have an idea? Want to volunteer?
+                    Want to work with other young people?
+
+                    Join Youth Aid Society and become
+                    part of something meaningful.
+
+                </p>
+
+
+                <div class="buttons">
+
+                    <!-- CHANGE EMAIL -->
+
+                    <a
+                        href="mailto:your-email@example.com"
+                        class="button green-button">
+
+                        Contact YAS
+
+                    </a>
+
+
+                    <a
+                        href="https://facebook.com/"
+                        target="_blank"
+                        class="button white-button">
+
+                        Facebook →
+
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         CONTACT
+    ========================= -->
+
+    <section class="contact" id="contact">
+
+        <div class="container">
+
+
+            <div class="section-heading">
+
+                <span>
+                    GET IN TOUCH
+                </span>
+
+                <h2>
+                    Let's Work Together
+                </h2>
+
+                <p>
+
+                    Whether you are a volunteer,
+                    organization or supporter,
+                    we would love to hear from you.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="contact-info">
+
+
+                <div class="contact-box">
+
+                    <strong>
+                        📍 Location
+                    </strong>
+
+                    Feni, Bangladesh
+
+                </div>
+
+
+                <div class="contact-box">
+
+                    <strong>
+                        📧 Email
+                    </strong>
+
+                    your-email@example.com
+
+                </div>
+
+
+                <div class="contact-box">
+
+                    <strong>
+                        📱 Phone
+                    </strong>
+
+                    +880 1XXXXXXXXX
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <div class="container">
+
+            <h2>
+                Youth Aid Society
+            </h2>
+
+            <p>
+                Different paths, same dreams.
+            </p>
+
+
+            <div class="social">
+
+                <!-- CHANGE THESE LINKS -->
+
+                <a
+                    href="https://facebook.com/"
+                    target="_blank">
+
+                    Facebook
+
+                </a>
+
+
+                <a
+                    href="https://instagram.com/"
+                    target="_blank">
+
+                    Instagram
+
+                </a>
+
+            </div>
+
+
+            <br>
+
+
+            <p>
+
+                © 2026 Youth Aid Society (YAS).
+                All Rights Reserved.
+
+            </p>
+
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>
